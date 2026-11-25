@@ -1,0 +1,140 @@
+@use '@angular/material' as mat;
+
+:root {
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-primary-soft: #EFF6FF;
+  --color-primary-dark: #172554;
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+  --color-border: #E2E8F0;
+  --color-success: #16A34A;
+  --color-success-soft: #DCFCE7;
+  --color-warning: #F59E0B;
+  --color-warning-soft: #FEF3C7;
+  --color-error: #DC2626;
+  --color-error-soft: #FEE2E2;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 76px;
+  --header-height: 64px;
+}
+
+html {
+  height: 100%;
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Inter,
+    density: 0,
+  ));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-icons-round {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.surface-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary-brand {
+  background-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500 !important;
+}
+
+.btn-primary-brand:hover:not(:disabled) {
+  background-color: var(--color-primary-hover) !important;
+}
+
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+table.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th.mat-mdc-header-cell {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background-color: #F8FAFC;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  td.mat-mdc-cell {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border);
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  tr.mat-mdc-row:hover td {
+    background-color: #F8FAFC;
+  }
+}
+
+.mat-mdc-snack-bar-container.toast-success .mdc-snackbar__surface {
+  background-color: var(--color-success) !important;
+  color: #FFFFFF !important;
+}
+
+.mat-mdc-snack-bar-container.toast-error .mdc-snackbar__surface {
+  background-color: var(--color-error) !important;
+  color: #FFFFFF !important;
+}
+
+.mat-mdc-snack-bar-container.toast-warning .mdc-snackbar__surface {
+  background-color: var(--color-warning) !important;
+  color: #0F172A !important;
+}
+
+.mat-mdc-snack-bar-container.toast-info .mdc-snackbar__surface {
+  background-color: var(--color-primary-dark) !important;
+  color: #FFFFFF !important;
+}

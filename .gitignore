@@ -1,0 +1,33 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Backend
+backend/sistema-api/target/
+*.jar
+*.war
+*.ear
+*.class
+hs_err_pid*
+
+# Frontend
+frontend/sistema-angular/node_modules/
+frontend/sistema-angular/.angular/
+frontend/sistema-angular/dist/
+frontend/sistema-angular/coverage/
+
+# Environment & Secrets
+.env
+infra/.env
+*.local
+*.pem
+*.key
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

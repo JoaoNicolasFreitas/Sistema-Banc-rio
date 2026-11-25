@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sistema_test;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+app:
+  security:
+    jwt:
+      secret: dGVzdC1qd3Qtc2VjcmV0LWtleS1mb3ItdW5pdC1hbmQtaW50ZWdyYXRpb24tdGVzdHMtMzJieXRlcw==
+      access-expiration-ms: 900000
+      refresh-expiration-ms: 604800000
+  bootstrap:
+    admin:
+      name: Admin Teste
+      email: admin.test@sistema.local
+      password: TestAdminPassword123!
